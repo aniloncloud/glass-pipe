@@ -1,0 +1,18 @@
+name: CI
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # The accept sandbox and worker-server sandbox use macOS seatbelt (sandbox-exec).
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Unit + integration tests (scripted fake worker, no network, no API keys)
+        run: uv run --python 3.11 --with pytest pytest -q

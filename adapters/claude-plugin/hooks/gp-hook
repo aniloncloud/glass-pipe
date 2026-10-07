@@ -1,0 +1,9 @@
+#!/bin/sh
+# glass-pipe hook entry. Uses the gp package next to this plugin (checkout layout), else `gp` on PATH.
+# Never fails the session: any problem exits 0 silently.
+root=$(cd "$(dirname "$0")/../../.." 2>/dev/null && pwd)
+if [ -n "$root" ] && [ -f "$root/gp/__init__.py" ]; then
+  PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m gp _hook "$1"
+fi
+command -v gp >/dev/null 2>&1 && exec gp _hook "$1"
+exit 0

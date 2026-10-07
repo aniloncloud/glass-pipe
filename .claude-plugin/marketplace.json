@@ -1,0 +1,14 @@
+{
+  "name": "glass-pipe",
+  "owner": { "name": "glass-pipe contributors" },
+  "description": "glass-pipe for Claude Code: hand implementation sub-tasks to agents on lower-cost plans behind a red-before-green gate.",
+  "plugins": [
+    {
+      "name": "gp",
+      "source": "./",
+      "description": "Delegate test-backed implementation tasks to OpenCode Go; get a one-line receipt; apply only what stays green on your tree.",
+      "category": "development",
+      "tags": ["opencode", "codex", "delegation", "testing", "sandbox"]
+    }
+  ]
+}

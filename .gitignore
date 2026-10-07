@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+.pytest_cache/
+.glass/jobs/
+.glass/preimages/
+.opencode/
+.venv/
+.glass/
+research/

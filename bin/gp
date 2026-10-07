@@ -1,0 +1,4 @@
+#!/bin/sh
+# glass-pipe shim: run the gp package from this checkout.
+here=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
+PYTHONPATH="$here${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m gp "$@"

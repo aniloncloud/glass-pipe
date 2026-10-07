@@ -1,0 +1,16 @@
+{
+  "description": "glass-pipe: session news line, edit log for the scorecard, self-stamp guard, optional gp auto-allow.",
+  "hooks": {
+    "SessionStart": [
+      {"hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/adapters/claude-plugin/hooks/gp-hook\" SessionStart", "timeout": 5}]}
+    ],
+    "PostToolUse": [
+      {"matcher": "Edit|Write|MultiEdit|NotebookEdit",
+       "hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/adapters/claude-plugin/hooks/gp-hook\" PostToolUse", "timeout": 5}]}
+    ],
+    "PreToolUse": [
+      {"matcher": "Bash",
+       "hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/adapters/claude-plugin/hooks/gp-hook\" PreToolUse", "timeout": 5}]}
+    ]
+  }
+}

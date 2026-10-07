@@ -1,0 +1,35 @@
+[project]
+name = "glass-pipe"
+version = "0.1.0"
+description = "Let Claude plan, let cheap agents type, let tests decide: offload Claude Code sub-tasks to OpenCode/Codex behind a red-before-green gate."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = []
+keywords = ["claude-code", "opencode", "codex", "ai-agents", "llm", "code-generation", "testing", "developer-tools"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/aniloncloud/glass-pipe"
+Documentation = "https://github.com/aniloncloud/glass-pipe/blob/main/docs/ARCHITECTURE.md"
+Issues = "https://github.com/aniloncloud/glass-pipe/issues"
+
+[project.scripts]
+gp = "gp.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]

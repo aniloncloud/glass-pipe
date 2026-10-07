@@ -1,0 +1,106 @@
+You are a coding worker. Complete exactly one task in the current directory (a git worktree).
+
+GOAL: make tests/test_calc.py::T::test_add pass
+
+ACCEPTANCE COMMAND (this alone decides success): python3 -m unittest tests.test_calc
+It currently FAILS. Failing output from the untouched tree:
+---
+F
+======================================================================
+FAIL: test_add (tests.test_calc.T.test_add)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/test_calc.py", line 6, in test_add
+    self.assertEqual(add(2, 3), 5)
+AssertionError: -1 != 5
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+---
+
+TEST TO READ FIRST: tests/test_calc.py
+Open and read the test before changing anything; make the real behavior correct, not the test quiet.
+
+RULES (hard; violations are rejected automatically):
+- You may READ any file.
+- You may WRITE ONLY these paths:
+  - src/calc.py
+- Never edit tests, fixtures, conftest files, or test-runner config.
+- Never add skip, xfail, only, or ignore markers.
+- Do not run git commit, git add, git stash, git checkout, or any git command that writes.
+- Run the acceptance command yourself to check your work before finishing.
+
+BINDING DECISIONS from earlier applied work (do not contradict):
+- decision: add() returns int, never float
+
+PREVIOUS ATTEMPT FAILED. You start from a clean tree; its edits were discarded.
+Last 60 lines (max) of the acceptance output after that attempt:
+---
+line 40
+line 41
+line 42
+line 43
+line 44
+line 45
+line 46
+line 47
+line 48
+line 49
+line 50
+line 51
+line 52
+line 53
+line 54
+line 55
+line 56
+line 57
+line 58
+line 59
+line 60
+line 61
+line 62
+line 63
+line 64
+line 65
+line 66
+line 67
+line 68
+line 69
+line 70
+line 71
+line 72
+line 73
+line 74
+line 75
+line 76
+line 77
+line 78
+line 79
+line 80
+line 81
+line 82
+line 83
+line 84
+line 85
+line 86
+line 87
+line 88
+line 89
+line 90
+line 91
+line 92
+line 93
+line 94
+line 95
+line 96
+line 97
+line 98
+line 99
+---
+
+When finished, end your reply with exactly this block (valid JSON on one line after the marker):
+<<<GP-RESULT
+{"status":"done","summary":"<what you changed, max 200 chars>","glass":[{"kind":"decision","text":"<one verifiable fact>"}]}
+glass kinds: decision, reject, next. At most 3 entries. Omit glass if there is nothing binding.

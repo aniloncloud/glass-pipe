@@ -1,0 +1,11 @@
+{
+  "name": "gp",
+  "version": "0.1.0",
+  "description": "glass-pipe: Claude plans and writes the failing test; an agent on a lower-cost plan (OpenCode Go) implements in a sandboxed worktree; a red-before-green gate decides what lands. One-line receipts, not transcripts.",
+  "author": { "name": "glass-pipe contributors" },
+  "license": "MIT",
+  "keywords": ["opencode", "codex", "delegation", "testing", "sandbox", "token-efficiency"],
+  "commands": ["./adapters/claude-plugin/commands/"],
+  "skills": ["./adapters/claude-plugin/skills/"],
+  "hooks": "./adapters/claude-plugin/hooks/hooks.json"
+}
